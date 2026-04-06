@@ -1,0 +1,282 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f0f;
+  color: white;
+}
+
+/* HERO LAYOUT */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* LEFT SIDE */
+.hero-left {
+  max-width: 600px;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 40px;
+  line-height: 1.1;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* SCRIPT NAME */
+.hero .name {
+  display: block;
+  font-family: 'Dancing Script', cursive;
+  font-size: 120px;
+  color: #ff4d6d;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+/* SUBTEXT */
+.subtitle {
+  margin-top: 20px;
+  color: #f9f8f8;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  margin-right: 15px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn.primary {
+  background: #ff4d6d;
+  color: white;
+}
+
+.btn.primary:hover {
+  transform: translateY(-3px);
+}
+
+.btn.secondary {
+  border: 1px solid #555;
+  color: white;
+}
+
+.btn.secondary:hover {
+  background: #222;
+}
+
+/* RIGHT SIDE VISUAL */
+.hero-right {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+/* GLOW CIRCLE (inspired by your reference image) */
+.glow-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ff4d6d, transparent 60%),
+              radial-gradient(circle at 70% 70%, #ff758f, transparent 70%);
+  filter: blur(120px);
+  opacity: 0.8;
+}
+
+.glow-circle {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(-20px, 20px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* BACKGROUND SOFT GRADIENT */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  right: -150px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: radial-gradient(circle, rgba(255,77,109,0.25), transparent 70%);
+  filter: blur(100px);
+}
+
+/* WORK */
+.work {
+  padding: 100px 60px;
+}
+
+.work h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 20px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: #ff4d6d;
+}
+
+/* ABOUT */
+.about {
+  padding: 140px 60px;
+  max-width: 700px;
+}
+
+.about h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.about p {
+  color: #999;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+/* CONTACT */
+.contact {
+  padding: 100px 60px;
+}
+
+section {
+  margin-bottom: 80px;
+}
+
+/* BACKGROUND SHAPES CONTAINER */
+.bg-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* COMMON SHAPE STYLE */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+}
+
+/* INDIVIDUAL SHAPES */
+.shape1 {
+  width: 500px;
+  height: 500px;
+  background: #ff4d6d;
+  top: 10%;
+  right: -100px;
+  animation: float1 10s ease-in-out infinite;
+}
+
+.shape2 {
+  width: 400px;
+  height: 400px;
+  background: #ff758f;
+  bottom: 10%;
+  left: -100px;
+  animation: float2 12s ease-in-out infinite;
+}
+
+.shape3 {
+  width: 300px;
+  height: 300px;
+  background: #ff4d6d;
+  top: 60%;
+  right: 30%;
+  animation: float3 14s ease-in-out infinite;
+}
+
+/* ANIMATIONS */
+@keyframes float1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(40px); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translate(0,0); }
+  50% { transform: translate(30px, -20px); }
+}
+
+.hero,
+.about,
+.work,
+.contact {
+  position: relative;
+  z-index: 2;
+}
+/* FULLSCREEN VIEWER */
+.viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.viewer img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.viewer .close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
