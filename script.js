@@ -70,14 +70,16 @@ cards.forEach(card => {
     });
 
     viewer.style.display = "block";
-    document.body.style.overflow = "hidden"; 
+document.body.style.overflow = "hidden"; 
+toggle.style.display = "none";   
   });
 });
 
 // CLOSE
 closeBtn.addEventListener("click", () => {
   viewer.style.display = "none";
-  document.body.style.overflow = "auto"; 
+document.body.style.overflow = "auto";
+toggle.style.display = "block";  
 });
 
 viewer.addEventListener("click", (e) => {
@@ -86,3 +88,19 @@ viewer.addEventListener("click", (e) => {
     document.body.style.overflow = "auto";
   }
 });
+
+
+const toggle = document.getElementById("themeToggle");
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+
+  if (document.body.classList.contains("light")) {
+    toggle.textContent = "☀️";
+  } else {
+    toggle.textContent = "🌙";
+  }
+  
+});
+
+ 
