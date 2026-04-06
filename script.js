@@ -6,50 +6,53 @@ const closeBtn = document.querySelector(".close");
 // PROJECT IMAGE DATA
 const projects = {
   brochure: [
-    "images/brochure/brochure1.JPG",
-    "images/brochure/brochure2.JPG"
+    "https://midhila345.github.io/portfolio/images/brochure/brochure1.JPG",
+    "https://midhila345.github.io/portfolio/images/brochure/brochure2.JPG",
+
   ],
   branding: [
-    "images/branding/branding1.jpg",
-    "images/branding/branding2.jpg",
-    "images/branding/branding3.jpg",
-    "images/branding/branding4.jpg",
-    "images/branding/branding5.jpg",
-    "images/branding/branding6.jpg",
-    "images/branding/branding7.jpg",
-    "images/branding/branding8.jpg",
-    "images/branding/branding9.jpg",
-    "images/branding/branding10.jpg",
-    "images/branding/branding11.jpg",
-    "images/branding/branding12.jpg",
-    "images/branding/branding13.jpg",
-    "images/branding/branding14.jpg",
-    "images/branding/branding15.jpg"
+    "https://midhila345.github.io/portfolio/images/branding/branding1.jpg",
+      "https://midhila345.github.io/portfolio/images/branding/branding2.jpg", 
+      "https://midhila345.github.io/portfolio/images/branding/branding3.jpg",
+     "https://midhila345.github.io/portfolio/images/branding/branding4.jpg" ,
+      "https://midhila345.github.io/portfolio/images/branding/branding5.jpg" ,
+      "https://midhila345.github.io/portfolio/images/branding/branding6.jpg" ,
+      "https://midhila345.github.io/portfolio/images/branding/branding7.jpg" ,
+      "https://midhila345.github.io/portfolio/images/branding/branding8.jpg" ,
+      "https://midhila345.github.io/portfolio/images/branding/branding9.jpg" ,
+     "https://midhila345.github.io/portfolio/images/branding/branding10.jpg" ,
+      "https://midhila345.github.io/portfolio/images/branding/branding11.jpg" ,
+      "https://midhila345.github.io/portfolio/images/branding/branding12.jpg" ,
+     "https://midhila345.github.io/portfolio/images/branding/branding13.jpg" ,
+      "https://midhila345.github.io/portfolio/images/branding/branding14.jpg" ,
+      "https://midhila345.github.io/portfolio/images/branding/branding15.jpg" ,
+        
   ],
   posters: [
-    "images/social-media/CUPP3.png",
-    "images/social-media/HEADF.png",
-    "images/social-media/drink.png"
+    "https://midhila345.github.io/portfolio/images/social-media/CUPP3.png",
+    "https://midhila345.github.io/portfolio/images/social-media/HEADF.png",
+    " https://midhila345.github.io/portfolio/images/social-media/drink.png",
+
   ],
-  "3d": [
-    "images/3d-models/model1.jpg",
-    "images/3d-models/model2.jpg",
-    "images/3d-models/model3.jpg",
-    "images/3d-models/model4.jpg",
-    "images/3d-models/model5.jpg",
-    "images/3d-models/model6.jpg"
+   d: [
+    "https://midhila345.github.io/portfolio/images/3d-models/model1.jpg",
+    "https://midhila345.github.io/portfolio/images/3d-models/model2.jpg" ,
+    "https://midhila345.github.io/portfolio/images/3d-models/model3.jpg" ,
+    "https://midhila345.github.io/portfolio/images/3d-models/model4.jpg" ,
+    "https://midhila345.github.io/portfolio/images/3d-models/model5.jpg" ,
+    "https://midhila345.github.io/portfolio/images/3d-models/model6.jpg", 
   ],
-  ui: [
-    "images/UI Design/ui1.jpg",
-    "images/UI Design/ui2.jpg",
-    "images/UI Design/ui3.jpg",
-    "images/UI Design/ui4.jpg",
-    "images/UI Design/ui5.jpg",
-    "images/UI Design/ui6.jpg",
-    "images/UI Design/ui7.jpg",
-    "images/UI Design/ui8.jpg",
-    "images/UI Design/ui9.jpg",
-    "images/UI Design/ui10.jpg"
+   ui: [
+    "https://midhila345.github.io/portfolio/images/UI Design/ui1.jpg",
+      "https://midhila345.github.io/portfolio/images/UI Design/ui2.jpg", 
+     "https://midhila345.github.io/portfolio/images/UI Design/ui3.jpg" ,
+     "https://midhila345.github.io/portfolio/images/UI Design/ui4.jpg" ,
+     "https://midhila345.github.io/portfolio/images/UI Design/ui5.jpg" ,
+     "https://midhila345.github.io/portfolio/images/UI Design/ui6.jpg" ,
+     "https://midhila345.github.io/portfolio/images/UI Design/ui7.jpg" ,
+     "https://midhila345.github.io/portfolio/images/UI Design/ui8.jpg" ,
+     "https://midhila345.github.io/portfolio/images/UI Design/ui9.jpg" ,
+     "https://midhila345.github.io/portfolio/images/UI Design/ui10.jpg" ,
   ]
 };
 
@@ -58,7 +61,7 @@ cards.forEach(card => {
   card.addEventListener("click", () => {
     const project = card.getAttribute("data-project");
 
-    viewerContent.innerHTML = ""; // clear old
+    viewerContent.innerHTML = "";
 
     projects[project].forEach(src => {
       const img = document.createElement("img");
@@ -67,17 +70,19 @@ cards.forEach(card => {
     });
 
     viewer.style.display = "block";
+    document.body.style.overflow = "hidden"; 
   });
 });
 
 // CLOSE
 closeBtn.addEventListener("click", () => {
   viewer.style.display = "none";
+  document.body.style.overflow = "auto"; // 🔥 ADD
 });
 
-// CLOSE on background click
 viewer.addEventListener("click", (e) => {
   if (e.target === viewer) {
     viewer.style.display = "none";
+    document.body.style.overflow = "auto"; // 🔥 ADD
   }
 });
