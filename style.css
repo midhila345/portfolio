@@ -7,7 +7,7 @@ body {
 
 /* HERO LAYOUT */
 .hero {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,6 +50,12 @@ body {
 .hero-buttons {
   margin-top: 30px;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+
 
 .btn {
   text-decoration: none;
@@ -167,7 +173,9 @@ body {
 }
 
 /* ABOUT */
-
+.about {
+  margin-top: -20px;
+}
 
 .about h2 {
   font-size: 28px;
@@ -321,12 +329,11 @@ section {
   width: 70px;
   height: 70px;
   background: #fff;
-  padding: 15px;
+  padding: 12px;
   border-radius: 15px;
   object-fit: contain;
-  transition: 0.3s;
-   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
+
 /* HOVER EFFECT */
 .software-grid img:hover {
   transform: translateY(-6px) scale(1.1);
@@ -415,7 +422,7 @@ section {
 .scroll-track {
   display: flex;
   width: max-content;
-  animation: scroll 8s linear infinite;
+  animation: scroll 7s linear infinite;
 }
 
 .scroll-track span {
@@ -443,4 +450,8 @@ section {
 .container {
   max-width: 1200px;
   margin: auto;
+}
+
+section {
+  scroll-margin-top: 80px;
 }
