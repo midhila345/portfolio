@@ -77,12 +77,12 @@ cards.forEach(card => {
 // CLOSE
 closeBtn.addEventListener("click", () => {
   viewer.style.display = "none";
-  document.body.style.overflow = "auto"; // 🔥 ADD
+  document.body.style.overflow = "auto"; 
 });
 
 viewer.addEventListener("click", (e) => {
   if (e.target === viewer) {
     viewer.style.display = "none";
-    document.body.style.overflow = "auto"; // 🔥 ADD
+    document.body.style.overflow = "auto";
   }
 });
