@@ -103,4 +103,22 @@ toggle.addEventListener("click", () => {
   
 });
 
- 
+ const softwareItems = document.querySelectorAll(".software-item");
+
+softwareItems.forEach(item => {
+  item.addEventListener("click", () => {
+
+    // remove active from others
+    softwareItems.forEach(i => i.classList.remove("active"));
+
+    // toggle current
+    item.classList.toggle("active");
+
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".software-item")) {
+    softwareItems.forEach(i => i.classList.remove("active"));
+  }
+});
